@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إهداء خاص للصديق أحمد ملك</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle at center, #0f172a, #020617);
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+        }
+        .card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 35px 25px;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(56, 189, 248, 0.1);
+            text-align: center;
+            max-width: 480px;
+            width: 90%;
+            position: relative;
+            animation: floatCard 4s ease-in-out infinite;
+        }
+        .badge {
+            background: linear-gradient(135deg, #38bdf8, #0284c7);
+            color: #fff;
+            padding: 6px 16px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+        }
+        h1 {
+            color: #38bdf8;
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(56, 189, 248, 0.3);
+        }
+        h2 {
+            color: #fbbf24;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #cbd5e1;
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        .duaa-box {
+            background: rgba(15, 23, 42, 0.8);
+            border-right: 5px solid #fbbf24;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: right;
+            margin-top: 20px;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
+        }
+        .duaa-box h3 {
+            color: #fbbf24;
+            margin: 0 0 10px 0;
+            font-size: 18px;
+        }
+        .duaa-box p {
+            margin: 0;
+            color: #e2e8f0;
+            font-size: 16px;
+        }
+        .interactive-btn {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 25px;
+            box-shadow: 0 5px 20px rgba(245, 158, 11, 0.4);
+            transition: all 0.3s ease;
+        }
+        .interactive-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.6);
+        }
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        /* تأثير النجوم المتطايرة عند الضغط */
+        .sparkle {
+            position: absolute;
+            font-size: 20px;
+            animation: flyUp 1s forwards ease-out;
+            pointer-events: none;
+        }
+        @keyframes flyUp {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card" id="card">
+        <div class="badge">🌟 إهداء خاص للصديق الوفي</div>
+        <h1>إلى الأخ الصديق: أحمد ملك</h1>
+        <h2>فخر الصداقة ومثال التفاني</h2>
+        <p>
+            نِعم الصديق الخيّر أنت، مواقفك الطيبة وسندك الدائم لا تقدر بثمن. وجودك كصديق يخلي الدنيا أسهل وأجمل.
+        </p>
+        
+        <div class="duaa-box">
+            <h3>🎓 دعواتنا لك في الشهادة السودانية:</h3>
+            <p>
+                ربنا يوفقك ويسهل لك كل صعب في هذا العام الدراسي الحاسم، وتحرز أعلى الدرجات والنسب العالية اللي ترفع راسك وراسنا، وفالك القبول في أفضل الجامعات بإذن الله! ✨🚀
+            </p>
+        </div>
+
+        <button class="interactive-btn" onclick="celebrate(event)">اضغط هنا للتهنئة الخاصة! 🎉</button>
+    </div>
+
+    <script>
+        function celebrate(e) {
+            // تأثير ظهور نجوم وإيموجي عند الضغط
+            const card = document.getElementById('card');
+            for (let i = 0; i < 7; i++) {
+                let sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.innerHTML = ['⭐', '🎓', '🔥', '✨', '🏆'][Math.floor(Math.random() * 5)];
+                sparkle.style.left = (Math.random() * 80 + 10) + '%';
+                sparkle.style.top = '70%';
+                card.appendChild(sparkle);
+                
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>
